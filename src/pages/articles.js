@@ -1,3 +1,4 @@
+
 import React from "react"
 import { Link, graphql } from "gatsby"
 
@@ -5,21 +6,15 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Img from 'gatsby-image'
 
-const IndexPage = ({ data }) => (
+const Articles = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Moi!</h1>
-    <p>
-      Tämä Sivusto käyttää hyväkseen Strapi CMS sisällönhallintaa. Gatsby hakee
-      Strapista sisällön ja rakentaa niistä staattisen sivuston, joka toimii
-      huomattavasti nopeammin kuin sivustot jotka lataavat sisältönsä
-      dynaamisesti.
-    </p>
+    <SEO title="Articles" />
+    <h1>Artikkelit</h1>
 
     <div className="row">
 
       {data.allArticle.edges.map(article => (
-        <div className="card col-md-6" key={article.node.id}>
+        <div className="card col-md-4" key={article.node.id}>
           {article.node.image &&
             <Img className="card-img-top" fluid={article.node.image.childImageSharp.fluid}/>
           }
@@ -35,10 +30,10 @@ const IndexPage = ({ data }) => (
   </Layout>
 )
 
-export default IndexPage
+export default Articles
 
 export const pageQuery = graphql`  
-  query FeaturedArticles {
+  query ArticleListing {
     allArticle {
       edges {
         node {
@@ -47,7 +42,7 @@ export const pageQuery = graphql`
           slug
           image {
             childImageSharp {
-              fluid(maxWidth: 570) {
+              fluid(maxWidth: 1140) {
                 ...GatsbyImageSharpFluid_noBase64
               }
             }

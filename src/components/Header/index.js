@@ -25,6 +25,9 @@ const Header = ({ siteTitle, className }) => {
             <li className="nav-item mb-0">
               <Link to="/example" className="nav-link" activeClassName="active">Example</Link>
             </li>
+            <li className="nav-item mb-0">
+              <Link to="/example" className="nav-link" activeClassName="active">Articles</Link>
+            </li>
           </ul>
         </div>
       </nav>

@@ -26,6 +26,7 @@ export default function Footer() {
           <ul className="list-unstyled text-small">
             <li><Link className="text-muted" to="/">Home</Link></li>
             <li><Link className="text-muted" to="/example">Example</Link></li>
+            <li><Link className="text-muted" to="/example">Articles</Link></li>
           </ul>
         </div>
         <div className="col-6 col-md">
@@ -39,6 +40,7 @@ export default function Footer() {
           <ul className="list-unstyled text-small">
             <li><Link className="text-muted" to="/">Home</Link></li>
             <li><Link className="text-muted" to="/example">Example</Link></li>
+            <li><Link className="text-muted" to="/example">Articles</Link></li>
           </ul>
         </div>
       </div>
