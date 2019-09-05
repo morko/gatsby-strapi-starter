@@ -66,7 +66,7 @@ exports.createPages = async ({ actions, graphql }) => {
           edges {
             node {
               id
-              title
+              slug
             }
           }
         }
@@ -74,7 +74,7 @@ exports.createPages = async ({ actions, graphql }) => {
     `);
     articles.data.allArticle.edges.forEach(({ node }) => {
       createPage({
-        path: buildSlug(node),
+        path: node.slug,
         component: path.resolve(`src/templates/article.js`),
         context: {
           id: node.id
