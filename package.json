@@ -1,9 +1,9 @@
 {
   "name": "gatsby-strapi-starter",
   "private": true,
-  "description": "A starter to get up and developing quickly with Gatsby, Bootstrap and Strapi.",
+  "description": "A starter to get up and developing quickly with Gatsby, Bootstrap and Strapi including webhooks.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Oskari Pöntinen <mail.morko@gmail.com>",
   "dependencies": {
     "gatsby": "^2.13.73",
     "gatsby-image": "^2.2.10",
