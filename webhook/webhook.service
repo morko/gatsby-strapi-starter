@@ -6,7 +6,7 @@ After=network.target
 Environment=PATH=/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 Type=simple
 User=ubuntu
-ExecStart=/usr/bin/nodejs /home/ubuntu/gatsby/devops/webhook.js
+ExecStart=/usr/bin/nodejs /home/ubuntu/gatsby/webhook
 Restart=on-failure
 
 [Install]
