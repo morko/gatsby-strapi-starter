@@ -83,7 +83,7 @@ exports.createPages = async ({ actions, graphql }) => {
     });
     return Promise.resolve(articles);
   } catch (e) {
-    console.error(`Error getting posts from Strapi: {$e.message}`);
+    console.error(`Error getting posts from Strapi: ${e.message}`);
     return Promise.reject(e);
   }
 };
