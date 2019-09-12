@@ -7,14 +7,30 @@
   Gatsby Strapi Starter
 </h1>
 
-**This starter expects that you have Strapi configured and running with
-a content type called Article!**
-
-The starter ships with
+## 💎️ Features
 
 - Bootstrap 4 configured to be loaded from a CDN.
 - Source plugin for strapi ready to go.
 - Strapi related Markdown to HTML hacks (see `gatsby-node.js`).
+- Webhooks to automate builds.
+
+## 📜 Requirements
+
+This project has some requirements from the Strapi CMS to be able to build.
+You can use my [strapi starter project](https://github.com/morko/strapi-starter) to bootstrap the Strapi. 
+
+You have to make sure that
+
+- [Strapi](https://strapi.io/) configured and running.
+- Strapi has a content type **Article** with following fields.
+  - `title` *String*
+  - `content` *Text*
+  - `image` *Media*
+  - `user` *Relation with User (from: users-permissions)*
+  - `teaser` *Text*
+- **Article** content type should have at least one entry.
+  - The entry should have all fields present!
+
 
 ## 🚀 Quick start
 
@@ -28,14 +44,14 @@ The starter ships with
 
 2.  **Start developing.**
 
-    Start Strapi
+    Make sure you have Strapi running and then run
 
     ```sh
     cd my-gatsby-site
     npm run develop
     ```
 
-4.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Gatsby site: `http://localhost:8000`
 
@@ -43,44 +59,18 @@ The starter ships with
 
     Open the `my-site` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
+## 📌 Automate builds with webhook
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+To automatically rebuild the project when some Strapi content changes you can use the webhook script located in `./webhook/index.js`.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+e.g.
 
-**`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+```sh
+cd <project>
+node ./webhook
+```
 
-**`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+This will run a [simple-webhooks](https://www.npmjs.com/package/simple-webhooks) server that will listen port 8338. 
+You can now trigger the webhook from the Strapi model files.
 
-**`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-**`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-**`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-**`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-**`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-**`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-**`LICENSE`**: This starter is licensed under the MIT license.
-
-**`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-**`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-**`README.md`**: A text file containing useful reference information about your project.
+See my strapi starter for an example https://github.com/morko/strapi-starter/blob/master/api/article/models/Article.js.
