@@ -1,8 +1,8 @@
-const { WebhookServer } = require("simple-webhooks");
-const dependencies = require("./dependencies");
-const build = require("./build");
+const { WebhookServer } = require('simple-webhooks');
+const dependencies = require('./dependencies');
+const build = require('./build');
 
-const SECRET = process.env.WEBHOOK_SECRET || "bad-secret-remove-immediately!";
+const SECRET = process.env.WEBHOOK_SECRET || 'bad-secret-remove-immediately!';
 
 const webhookServer = new WebhookServer({
   secret: SECRET,

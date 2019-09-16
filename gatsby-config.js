@@ -5,7 +5,6 @@ module.exports = {
     author: `Oskari Pöntinen`,
   },
   plugins: [
-
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -38,7 +37,6 @@ module.exports = {
      */
     // `gatsby-plugin-offline`,
 
-
     /**
      * This plugin transforms Markdown from source plugins into HTML.
      * See https://www.gatsbyjs.org/packages/gatsby-transformer-remark/
@@ -53,17 +51,17 @@ module.exports = {
       resolve: 'gatsby-source-strapi',
       options: {
         apiURL: 'http://localhost:1337',
-        contentTypes: [ 
+        contentTypes: [
           // List of the Content Types you want to be able to request from Gatsby.
-          'article'
+          'article',
         ],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {
-          identifier: "",
-          password: "",
+          identifier: '',
+          password: '',
         },
         queryLimit: 1000,
       },
     },
   ],
-}
+};

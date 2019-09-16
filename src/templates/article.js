@@ -12,11 +12,18 @@ const ArticleTemplate = ({ data }) => {
           <h1>{data.article.title}</h1>
         </div>
         <div className="col-md-4">
-          {data.article.image && <Img fluid={data.article.image.childImageSharp.fluid} />}
+          {data.article.image && (
+            <Img fluid={data.article.image.childImageSharp.fluid} />
+          )}
         </div>
       </div>
       <div className="row">
-        <div className="article-content" dangerouslySetInnerHTML={{ __html: data.article.childMarkdownRemark.html }} />
+        <div
+          className="article-content"
+          dangerouslySetInnerHTML={{
+            __html: data.article.childMarkdownRemark.html,
+          }}
+        />
       </div>
     </Layout>
   );

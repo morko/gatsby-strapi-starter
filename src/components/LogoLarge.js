@@ -1,9 +1,8 @@
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import React from "react"
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import React from 'react';
 
 const LogoLarge = ({ className, style }) => {
-
   const data = useStaticQuery(
     graphql`
       query {
@@ -16,11 +15,15 @@ const LogoLarge = ({ className, style }) => {
         }
       }
     `
-  )
+  );
 
   return (
-    <Img className={className} style={style} fixed={data.file.childImageSharp.fixed} />
-  )
-}
+    <Img
+      className={className}
+      style={style}
+      fixed={data.file.childImageSharp.fixed}
+    />
+  );
+};
 
-export default LogoLarge
+export default LogoLarge;

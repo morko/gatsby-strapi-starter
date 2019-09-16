@@ -1,9 +1,9 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Img from 'gatsby-image'
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
+import Img from 'gatsby-image';
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -17,27 +17,30 @@ const IndexPage = ({ data }) => (
     </p>
 
     <div className="row">
-
       {data.allArticle.edges.map(article => (
         <div className="card col-md-6" key={article.node.id}>
-          {article.node.image &&
-            <Img className="card-img-top" fluid={article.node.image.childImageSharp.fluid}/>
-          }
+          {article.node.image && (
+            <Img
+              className="card-img-top"
+              fluid={article.node.image.childImageSharp.fluid}
+            />
+          )}
           <div className="card-body">
             <h5 className="card-title">{article.node.title}</h5>
             <p className="card-text">{article.node.teaser}</p>
-            <Link to={article.node.slug} className="card-link">Lue lisää</Link>
+            <Link to={article.node.slug} className="card-link">
+              Lue lisää
+            </Link>
           </div>
         </div>
       ))}
-
     </div>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
 
-export const pageQuery = graphql`  
+export const pageQuery = graphql`
   query FeaturedArticles {
     allArticle {
       edges {
@@ -61,4 +64,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

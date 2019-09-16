@@ -1,13 +1,13 @@
-const exec = require("child_process").exec;
+const exec = require('child_process').exec;
 
 const dependencies = [
   {
-    name: "npm",
-    command: "npm help",
+    name: 'npm',
+    command: 'npm help',
   },
   {
-    name: "rsync",
-    command: "rsync --help",
+    name: 'rsync',
+    command: 'rsync --help',
   },
 ];
 
@@ -29,7 +29,7 @@ async function checkDependencies() {
   }
 
   if (missingDependencies.length > 0) {
-    throw new Error(`missing dependencies: ${missingDependencies.join(", ")}`);
+    throw new Error(`missing dependencies: ${missingDependencies.join(', ')}`);
   }
 
   return true;

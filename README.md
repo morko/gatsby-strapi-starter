@@ -17,20 +17,19 @@
 ## 📜 Requirements
 
 This project has some requirements from the Strapi CMS to be able to build.
-You can use my [strapi starter project](https://github.com/morko/strapi-starter) to bootstrap the Strapi. 
+You can use my [strapi starter project](https://github.com/morko/strapi-starter) to bootstrap the Strapi.
 
 You have to make sure that
 
 - [Strapi](https://strapi.io/) configured and running.
 - Strapi has a content type **Article** with following fields.
-  - `title` *String*
-  - `content` *Text*
-  - `image` *Media*
-  - `user` *Relation with User (from: users-permissions)*
-  - `teaser` *Text*
+  - `title` _String_
+  - `content` _Text_
+  - `image` _Media_
+  - `user` _Relation with User (from: users-permissions)_
+  - `teaser` _Text_
 - **Article** content type should have at least one entry.
   - The entry should have all fields present!
-
 
 ## 🚀 Quick start
 
@@ -70,7 +69,7 @@ cd <project>
 node ./webhook
 ```
 
-This will run a [simple-webhooks](https://www.npmjs.com/package/simple-webhooks) server that will listen port 8338. 
+This will run a [simple-webhooks](https://www.npmjs.com/package/simple-webhooks) server that will listen port 8338.
 You can now trigger the webhook from the Strapi model files.
 
 See my strapi starter for an example https://github.com/morko/strapi-starter/blob/master/api/article/models/Article.js.
